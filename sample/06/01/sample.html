@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+function partialyApply(func, z) {
+	return (x, y) => func(x, y, z);
+}
+function distance3D(x, y, z) {
+	const squareSum = x * x + y * y + z * z;
+	return Math.sqrt(squareSum);
+}
+// console.log(distance3D(2 * Math.SQRT2, 2 * Math.SQRT2, 3));
+const distance2D = partialyApply(distance3D, 0);
+console.log(distance2D(3, 4));
+</script>
+</head>
+
+<body>
+</body>
+</html>

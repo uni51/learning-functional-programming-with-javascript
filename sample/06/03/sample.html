@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+function validateStringNumber(func) {
+	return (numOrString) => {
+		const number = parseInt(numOrString);
+		if (!isNaN(number)) {
+			return func(String(number));
+		} else {
+			return null;
+		}
+	};
+}
+function insertSeparator(number_string) {
+	const length = number_string.length;
+	if (length > 3) {
+		const after = number_string.substr(-3);
+		const before = number_string.substr(0, number_string.length - 3);
+		return insertSeparator(before) + ',' + after;
+	} else {
+		return number_string;
+	}
+}
+const insertComma = validateStringNumber(insertSeparator);
+console.log(insertComma(1234567890));
+console.log(insertComma('1234abc'));
+console.log(insertComma('abc'));
+console.log(insertComma('0x123abc'));
+</script>
+</head>
+
+<body>
+</body>
+</html>

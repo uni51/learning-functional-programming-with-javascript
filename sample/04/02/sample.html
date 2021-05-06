@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+function createCounter(count = 0) {
+	// let count = 0;
+	return {
+		getValue() {
+			return count;
+		},
+		increment() {
+			return ++count;
+		}
+	};
+}
+const counter = createCounter(5);
+console.log(counter.getValue());
+console.log(counter.increment());
+const counter2 = createCounter();
+console.log(counter2.getValue());
+console.log(counter2.increment());
+</script>
+</head>
+
+<body>
+</body>
+</html>

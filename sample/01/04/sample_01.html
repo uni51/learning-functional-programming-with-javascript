@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+class Vector {
+	constructor(x, y) {
+		this.x = x;
+		this.y = y;
+	}
+	add(x, y) {
+		this.x += x;
+		this.y += y;
+	}
+	scale(scale) {
+		this.x *= scale;
+		this.y *= scale;
+	}
+}
+var vector = new Vector(1, 2);
+var num = 1;
+switch (num) {
+	case 1:
+		vector.add(1, 0);
+		console.log(vector);
+	case 2:
+		vector.scale(2);
+		console.log(vector);
+}
+console.log(vector);
+</script>
+</head>
+
+<body>
+</body>
+</html>

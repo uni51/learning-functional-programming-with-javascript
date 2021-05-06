@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+function createCounter() {
+	let count = 0;
+	return {
+		// count: 0
+		getValue: () => count
+	};
+}
+const counter = createCounter();
+// console.log(counter.count);
+console.log(counter.getValue());
+</script>
+</head>
+
+<body>
+</body>
+</html>

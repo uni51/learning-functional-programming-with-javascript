@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+var array = [1, 2, 3];
+// function square(_array) {
+function square(arrayOrg) {
+	var _array = arrayOrg.concat();
+	for (var i = 0; i < _array.length; i++) {
+		_array[i] *= _array[i];
+	}
+	return _array;
+}
+console.log(square(array));
+console.log(array);
+</script>
+</head>
+
+<body>
+</body>
+</html>

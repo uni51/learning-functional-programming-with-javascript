@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+const array = [0, 1, 2, 3, 4, 5];
+let evenArray = array.filter((element) => element % 2 === 0);
+console.log(evenArray);
+let every = evenArray.every((element) => element % 2 === 0);
+console.log(every);
+evenArray.push(1);
+console.log(evenArray);
+every = evenArray.every((element) => element % 2 === 0);
+let some = evenArray.some((element) => element % 2 === 1);
+console.log(every, some);
+</script>
+</head>
+
+<body>
+</body>
+</html>
