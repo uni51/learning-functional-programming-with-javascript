@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+var vector = {x: 1, y: 2};
+function add(_vector, x, y) {
+	var vector = {x: _vector.x + x, y: _vector.y + y};
+	return vector;
+}
+function scale(_vector, scale) {
+	var vector = {x: _vector.x * scale, y: _vector.y * scale};
+	return vector;
+}
+var num = 1;
+switch (num) {
+  case 1:
+    var vectorAdded = add(vector, 1, 0);
+    console.log(vectorAdded);
+    break;
+  case 2:
+    var vectorScaled = scale(vector, 2);
+    console.log(vectorScaled);
+    break;    
+}
+console.log(vector);
+</script>
+</head>
+
+<body>
+</body>
+</html>
