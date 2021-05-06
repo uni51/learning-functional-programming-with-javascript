@@ -7,7 +7,7 @@
 var array = [1, 2, 3];
 // function square(_array) {
 function square(arrayOrg) {
-  var _array = arrayOrg.concat(); 
+  var _array = arrayOrg.concat(); // concatは既存の配列を変更せず、新しい配列を返却する
   for(var i=0; i < _array.length; i++) {
     _array[i] *= _array[i];
   }
