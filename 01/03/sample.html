@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+/*
+setTimeout(function(message) {
+  console.log(message);
+}, 1000, 'timeout!');
+*/
+function calc(x) {
+  return function(y) {
+    return x * y;
+  }
+}
+var double = calc(2);
+console.log(double(3), double(4));
+</script>
+</head>
+
+<body>
+</body>
+</html>
