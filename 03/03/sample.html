@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+function compose(func) {
+	return (x, y) => func(x, y);
+}
+const squareSum = compose((x, y) => x * x + y * y);
+console.log(squareSum(3, 4));
+const getAngle = compose((x, y) => Math.atan2(y, x) * 180 / Math.PI);
+console.log(getAngle(1, Math.sqrt(3))); // ルート3
+</script>
+</head>
+
+<body>
+</body>
+</html>
