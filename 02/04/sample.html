@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+/* function getSort(x) {
+	let array;
+	if (typeof x === 'string') {
+		array = x.split(''); // 1文字ずつ切り分ける
+		array.sort();
+		return array.join('');
+ 	}
+} */
+function getSort(x) {
+	if (typeof x === 'string') {
+    return sortString(x);
+	}
+}
+function sortString(x) {
+  let array = x.split(''); // 1文字ずつ切り分ける
+	array.sort();
+	return array.join('');
+}
+console.log(getSort('string'));
+</script>
+</head>
+
+<body>
+</body>
+</html>
