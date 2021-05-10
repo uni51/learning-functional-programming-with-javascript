@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+function getSort(x) {
+	if (typeof x === 'string') {
+		return sortString(x);
+	} else if (x instanceof Array) {
+    return sortArray(x);
+  } else {
+    return null;
+  }
+}
+function sortString(x) {
+	let array = x.split(''); // 1文字ずつ切り分ける
+	array.sort();
+	return array.join('');	
+}
+function sortArray(array) {
+  let _array = array.concat(); // 配列のコピーを取得する
+  _array.sort();
+  return _array;
+}
+let x = 'string';
+console.log(getSort(x), x);
+x = [1, 2, 0];
+console.log(getSort(x), x);
+</script>
+</head>
+
+<body>
+</body>
+</html>
