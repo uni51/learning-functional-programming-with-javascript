@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+function compose(x, func) {
+  if (typeof x === 'number' && !isNaN(x) && typeof func === 'function') {
+	  return func(x);
+  } else {
+    console.log('argument are not valid!');
+  }
+}
+function square(x) {
+	return x * x;
+}
+function add(x, y) {
+	return x + y;
+}
+const x = compose('3', square);
+const y = compose(4, square);
+const squareSum = add(x, y);
+console.log(squareSum);
+const distance = compose(squareSum, Math.sqrt);
+console.log(distance);
+</script>
+</head>
+
+<body>
+</body>
+</html>
