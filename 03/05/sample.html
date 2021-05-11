@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+function compose(func0, func1) {
+  return (x, y) => func0(func1(x), func1(y));
+}
+function compose2(func0, func1) {
+  return (x, y) => func0(func1(x, y));
+}
+function square(x) {
+	return x * x;
+}
+function add(x, y) {
+	return x + y;
+}
+const squareSum = compose(add, square);
+// console.log(squareSum(3, 4)); // 25
+const distance = compose2(Math.sqrt, squareSum); // 25の平方根
+console.log(distance(3, 4));
+</script>
+</head>
+
+<body>
+</body>
+</html>
