@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script>
+function compose(func0, func1) {
+	return (x, y) => {
+    if (validateNum(x) && validateNum(y)) {
+      return func0(func1(x), func1(y))
+    }
+  };
+}
+function compose2(func0, func1) {
+	return (x, y) => {
+    if (validateNum(x) && validateNum(y)) {
+      return func0(func1(x, y))
+    }
+  };
+}
+function square(x) {
+	return x * x;
+}
+function add(x, y) {
+	return x + y;
+}
+function validateNum(x) {
+	const isNum = typeof x === 'number' && !isNaN(x);
+	if (!isNum) {
+		console.log(`${x} is not number`);
+	}
+	return isNum;
+}
+const squareSum = compose(add, square);
+const distance = compose2(Math.sqrt, squareSum);
+// console.log(distance('3', 4)); // 問題のあるケース
+console.log(distance(3, 4)); // 問題のないケース
+</script>
+</head>
+
+<body>
+</body>
+</html>
