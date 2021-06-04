@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>フォームでテキストファイルを読み込む</title>
+<script>
+function init () {
+  const form = document.forms.form;
+  form.file.addEventListener('change', () => {
+    let file = form.file.files[0];
+    if (file) {
+      let fileReader = new FileReader();
+      fileReader.addEventListener('load', () => {
+        console.log(fileReader.result);
+      });
+      fileReader.readAsText(file);
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</head>
+
+<body>
+<form name="form">
+	<h3>file</h3>
+	<input name="file" type="file">
+</form>
+</body>
+</html>
