@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array.every()とArray.some()メソッドで配列要素を調べる</title>
+<script>
+const array = [0, 1, 2, 3, 4, 5];
+let evenArray = array.filter((element) => element % 2 === 0);
+console.log(evenArray); // [0, 2, 4]
+// 全ての要素が偶数であればtrue
+let every = evenArray.every((element) => element % 2 === 0);
+console.log(every); // true
+evenArray.push(1);
+console.log(evenArray); // [0, 2 ,4, 1]
+every = evenArray.every((element) => element % 2 === 0);
+let some = evenArray.some((element) => element % 2 === 1);
+console.log(every, some) // false, true
+</script>
+</head>
+
+<body>
+</body>
+</html>
