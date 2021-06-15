@@ -2,17 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Array.map()メソッドで配列要素に演算を加える</title>
+<title>Arrayクラスのメソッドを組み合わせて使う</title>
 <script>
 const array = [6, 4, 6, 6, 6, 3, 7, 2, 2, 8];
 const average = array.reduce((previous, current, i) => previous + current) / array.length;
-console.log(average);
-const squaredDifference = array.map((element, i) => {
+// 標準偏差
+const standardDeviation = Math.sqrt(array.map((element, i) => {
   const difference = element - average;
   return difference * difference;
-});
-console.log(squaredDifference); // 差の2乗
-console.log(array);
+})
+.reduce((previous, current, i) => previous + current) / array.length);
+console.log(standardDeviation);
 </script>
 </head>
 
