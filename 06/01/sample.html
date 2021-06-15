@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>関数を部分適用する</title>
+<title>関数を部分適用する（引数の値を部分的に固定する）</title>
 <script>
 function partialyApply(func, z) {
   return (x, y) => func(x, y, z);
@@ -14,7 +14,7 @@ function distance3D(x, y, z) {
 }
 // console.log(distance3D(2 * Math.SQRT2, 2 * Math.SQRT2, 3)) // 5
 
-const distance2D = partialyApply(distance3D, 0);
+const distance2D = partialyApply(distance3D, 0); // 引数の値を部分的に固定する（z を 0に固定している）
 console.log(distance2D(3, 4)); // 5
 </script>
 </head>
