@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>関数の再帰呼び出し -- 関数の中から関数自身を呼び出す --</title>
+<script>
+function insertSeparator(number_string) {
+  /*
+	let result_string = '';
+	while (number_string.length > 3) {
+		let after = number_string.substr(-3); // 下3桁を区切っている
+		number_string = number_string.substr(0, number_string.length - 3);
+		result_string = ',' + after + result_string;
+	}
+	return number_string + result_string;
+  */
+ const length = number_string.length;
+ if (length > 3) {
+  const after = number_string.substr(-3); // 下3桁を区切っている
+  const before = number_string.substr(0, number_string.length - 3);
+  return insertSeparator(before) + ',' + after;
+ } else {
+   return number_string;
+ }
+}
+console.log(insertSeparator('1234567890'));
+console.log(insertSeparator('1234'));
+console.log(insertSeparator('123'));
+console.log(insertSeparator('1'));
+</script>
+</head>
+
+<body>
+</body>
+</html>
